@@ -43,9 +43,15 @@ class Database {
     public:
         Database();
         sqlite3* SQLite3() {return this->database;}
-        bool QuerryUserInfo(string&& name, string& pass, int& status, int& sockfd);
+        bool QuerryUserInfo(string&& name,
+                            string& pass,
+                            int& status,
+                            int& sockfd);
         bool UpdateUserStatus(string&& name, int&& status, int&& sockfd);
-        bool AddNewUserToDatabase(string&& name, string&& pass, int&& status, int& sockfd);
+        bool AddNewUserToDatabase(string&& name,
+                                  string&& pass,
+                                  int&& status,
+                                  int& sockfd);
 };
 
 class Server : private Socket {
